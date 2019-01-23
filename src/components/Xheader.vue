@@ -1,9 +1,10 @@
 <template>
   <div class="header">
-    <span class="logo" >
+    <span class="logo" v-show="logoicy">
       <img src="../assets/images/logo_icy.png" alt="logo">
     </span>
-    <span class="search">
+    <span class="search" v-show="search">
+      <img src="../assets/images/logo_search.png" alt="search">
       <input type="text">
     </span>
     <span class="logo_headset">
@@ -15,9 +16,13 @@
   </div>
 </template>
 <script>
-// console.log(show)
 export default {
-  
+  data(){
+    return{
+      logoicy:false,
+      search:false
+    }
+  }
 };
 </script>
 <style scope>
@@ -54,19 +59,28 @@ export default {
   height: 27px;
 }
 .search {
-  background: #ccc;
+  background: #f5f5f5;
   display: inline-block;
   width: 250px;
   height: 23px;
   border-radius: 20px;
   margin: 5px 10px 10px 10px;
-  padding: 5px 0 8px 10px;
+  padding: 5px 0 8px 25px;
 }
 .search input {
-  background: #ccc;
+  background: #f5f5f5;
   margin-left: 10px;
   width: 220px;
   height: 20px;
   border: 1px solid transparent;
+  position: relative;
+}
+.search img{
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top:50%;
+  margin-top:-9px;
+  left:25px;
 }
 </style>
