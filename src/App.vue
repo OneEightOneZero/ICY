@@ -3,18 +3,21 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <Xheader/>
+    <Cfooter></Cfooter>
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 import Xheader from './components/Xheader.vue'
+import Cfooter from './components/Cfooter'
 
 export default {
   name: 'app',
   components: {
     // HelloWorld
-    Xheader
+    Xheader,
+    Cfooter
   }
 }
 </script>

@@ -20,8 +20,16 @@
         "@vue/cli-plugin-eslint": "^3.3.0",
         "@vue/cli-service": "^3.3.0",
         "babel-eslint": "^10.0.1",
+        "cssnano": "^4.1.8",
+        "cssnano-preset-advanced": "^4.0.6",
         "eslint": "^5.8.0",
         "eslint-plugin-vue": "^5.0.0",
+        "postcss-aspect-ratio-mini": "^1.0.1",
+        "postcss-cssnext": "^3.1.0",
+        "postcss-import": "^12.0.1",
+        "postcss-px-to-viewport": "0.0.3",
+        "postcss-url": "^8.0.0",
+        "postcss-write-svg": "^3.0.1",
         "vue-template-compiler": "^2.5.21"
     },
     "eslintConfig": {
@@ -40,7 +48,30 @@
     },
     "postcss": {
         "plugins": {
-            "autoprefixer": {}
+            "autoprefixer": {},
+            "postcss-import": {},
+            "postcss-url": {},
+            "postcss-aspect-ratio-mini": {},
+            "postcss-write-svg": {
+                "utf8": false
+            },
+            "postcss-cssnext": {},
+            "postcss-px-to-viewport": {
+                "viewportWidth": "750",
+                "unitPrecision": "3",
+                "viewportUnit": "vw",
+                "selectorBlackList": [
+                    ".ignore",
+                    ".hairlines"
+                ],
+                "minPixelValue": 1,
+                "mediaQuery": false
+            },
+            "cssnano": {
+                "preset": "advanced",
+                "autoprefixer": false,
+                "postcss-zindex": false
+            }
         }
     },
     "browserslist": [
