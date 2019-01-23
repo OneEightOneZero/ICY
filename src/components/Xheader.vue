@@ -5,7 +5,7 @@
     </span>
     <span class="search" v-show="search">
       <img src="../assets/images/logo_search.png" alt="search">
-      <input type="text">
+      <input type="text" placeholder="连衣裙">
     </span>
     <span class="logo_headset">
       <img src="../assets/images/logo_headset.png" alt="logo_headset">
@@ -28,59 +28,62 @@ export default {
 <style scope>
 .header {
   /* background:red; */
-  height: 50px;
+  height: 100px;
   position: relative;
 }
 .logo_headset {
   position: absolute;
-  top: 13px;
-  right: 60px;
+  top: 26px;
+  right: 100px;
 }
 .logo_headset img {
-  width: 23px;
-  height: 23px;
+  width: 46px;
+  height: 46px;
 }
 .logo_shoppingCart {
   position: absolute;
-  top: 13px;
-  right: 17px;
+  top: 26px;
+  right: 30px;
 }
 .logo_shoppingCart img {
-  width: 23px;
-  height: 23px;
+  width: 46px;
+  height: 46px;
 }
 .logo {
   /* background: red; */
   position: absolute;
-  padding: 10px 0 0 10px;
+  padding: 20px 0 0 10px;
 }
 .logo img {
-  width: 50px;
-  height: 27px;
+  width: 70px;
+  height: 54px;
 }
 .search {
   background: #f5f5f5;
   display: inline-block;
-  width: 250px;
-  height: 23px;
-  border-radius: 20px;
-  margin: 5px 10px 10px 10px;
+  width: 500px;
+  height: 60px;
+  border-radius: 40px;
+  margin: 10px 10px 10px 45px;
   padding: 5px 0 8px 25px;
 }
 .search input {
   background: #f5f5f5;
-  margin-left: 10px;
-  width: 220px;
-  height: 20px;
-  border: 1px solid transparent;
+  margin-left: 20px;
+  margin-top:8px;
+  width: 460px;
+  height: 40px;
+  font-size:14px;
+  line-height:40px;
+  color:#999;
+  border: 1px solid #f5f5f5;
   position: relative;
 }
 .search img{
-  width: 17px;
-  height: 17px;
+  width: 34px;
+  height: 34px;
   position: absolute;
-  top:50%;
-  margin-top:-9px;
-  left:25px;
+  top:30px;
+  left:55px;
 }
 </style>
