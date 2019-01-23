@@ -5,12 +5,8 @@
     <Xheader></Xheader>
     <Xnav></Xnav>
     <Cfooter></Cfooter>
-<<<<<<< HEAD
-    <Xiconnav/>
+    
     <Cstyle></Cstyle>
-=======
-   
->>>>>>> 6952f4ff6d64ed38a8201f0441ff24d6aacd2631
     
   </div>
 </template>
@@ -19,14 +15,11 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Xheader from './components/Xheader.vue'
 import Cfooter from './components/Cfooter'
-<<<<<<< HEAD
 
-import Xiconnav from "./components/Xiconnav.vue";
+
 import Cstyle from "./pages/Cstyle.vue";
-=======
 import Xnav from "./components/Xnav.vue";
 
->>>>>>> 6952f4ff6d64ed38a8201f0441ff24d6aacd2631
 
 export default {
   name: "app",
@@ -35,12 +28,8 @@ export default {
     // Xheaderstyle,
     Xheader,
     Cfooter,
-<<<<<<< HEAD
-    Xiconnav,
-    Cstyle
-=======
+    Cstyle,
     Xnav,
->>>>>>> 6952f4ff6d64ed38a8201f0441ff24d6aacd2631
     // Xheadershop
   }
 };
