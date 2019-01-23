@@ -2,9 +2,10 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <Xheader/>
+    <Xheader></Xheader>
+    <Xnav></Xnav>
     <Cfooter></Cfooter>
-    <Xiconnav/>
+   
     
   </div>
 </template>
@@ -13,8 +14,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Xheader from './components/Xheader.vue'
 import Cfooter from './components/Cfooter'
-
-import Xiconnav from "./components/Xiconnav.vue";
+import Xnav from "./components/Xnav.vue";
 
 
 export default {
@@ -24,7 +24,7 @@ export default {
     // Xheaderstyle,
     Xheader,
     Cfooter,
-    Xiconnav,
+    Xnav,
     // Xheadershop
   }
 };
