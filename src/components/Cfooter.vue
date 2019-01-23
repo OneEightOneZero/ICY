@@ -1,11 +1,12 @@
 <template>
   <div class="cy-tabar clearfix">
     <!---->
-    <div class="cy-tabar-item fl cy-selected">
-      <span data-v-1a1d6634>STYLE</span>
+    <div @click="changeCut(index)" v-for="(n,index) in titles" :key="index" class="cy-tabar-item fl" :class="{'cy-selected': index==cur}">
+      <span v-text="n.title">STYLE</span>
       <p class="cy-curr-icon"></p>
     </div>
-    <div class="cy-tabar-item fl">
+
+    <!-- <div class="cy-tabar-item fl">
       <span data-v-1a1d6634>ICON</span>
       <p class="cy-curr-icon"></p>
     </div>
@@ -16,28 +17,40 @@
     <div class="cy-tabar-item fl">
       <span data-v-1a1d6634>ME</span>
       <p class="cy-curr-icon"></p>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 export default {
+  // 获取父组件传过来的属性值，让子组件呈现对应的状态
   data() {
     return {
-      title: "icy"
+      titles: [{
+        title:'STYLE'
+      },{
+        title:'ICON'
+      },{
+        title:'SHOP'
+      },{
+        title:'ME'
+      }],
+      cur: 0
     };
   },
   methods: {
-    // 获取数据的方法
-    async getNews() {
-      let data = await this.$axios.get("http://localhost:3000/news");
-      this.news = this.news.concat(data);
-    }
+    changeCut(index) {
+            // console.log(index)
+            this.cur = index;
+        }
   },
   computed: {},
   watch: {},
-  created() {},
-  mounted() {}
+  created() {
+    
+  },
+  mounted() {
+  }
 };
 </script>
 

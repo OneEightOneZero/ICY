@@ -5,6 +5,7 @@
     <Xheader/>
     <Cfooter></Cfooter>
     <Xiconnav/>
+    <Cstyle></Cstyle>
     
   </div>
 </template>
@@ -15,7 +16,7 @@ import Xheader from './components/Xheader.vue'
 import Cfooter from './components/Cfooter'
 
 import Xiconnav from "./components/Xiconnav.vue";
-
+import Cstyle from "./pages/Cstyle.vue";
 
 export default {
   name: "app",
@@ -25,6 +26,7 @@ export default {
     Xheader,
     Cfooter,
     Xiconnav,
+    Cstyle
     // Xheadershop
   }
 };
