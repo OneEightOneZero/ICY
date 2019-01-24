@@ -11,7 +11,6 @@
 // 引用组件
 
 import Xheader from "../components/Xheader.vue";
-import Xiconnav from "../components/Xiconnav.vue";
 import Cfooter from "../components/Cfooter.vue";
 
 export default {
@@ -19,7 +18,6 @@ export default {
     // 注册组件
     // 引用组件，在注册，然后在template使用
     Xheader,
-    Xiconnav,
     Cfooter
 
   },

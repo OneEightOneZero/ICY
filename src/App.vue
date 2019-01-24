@@ -5,8 +5,7 @@
     <Xheader></Xheader>
     <Xnav></Xnav>
     <Cfooter></Cfooter>
-    
-    <Cstyle></Cstyle>
+   
     
   </div>
 </template>
@@ -15,9 +14,6 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Xheader from './components/Xheader.vue'
 import Cfooter from './components/Cfooter'
-
-
-import Cstyle from "./pages/Cstyle.vue";
 import Xnav from "./components/Xnav.vue";
 
 
@@ -28,7 +24,6 @@ export default {
     // Xheaderstyle,
     Xheader,
     Cfooter,
-    Cstyle,
     Xnav,
     // Xheadershop
   }
