@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="Xnav">
     <div class="nav">
       <span :class="{xian:show_new}" @click="show__new">最新</span>
       <span :class="{xian:show_blogger}" @click="show__blogger">时尚博主</span>
@@ -47,8 +47,8 @@ export default {
   data() {
     return {
       show_new: true,
-      show_blogger: false,
-      show_start: false,
+      show_blogger: true,
+      show_start: true,
       arr: [],
       arr1:[],
       arr2:[]
@@ -100,7 +100,14 @@ export default {
 };
 </script>
 <style lang="scss" scope>
+ .Xnav{
+  z-index:-1;
+}
 .nav {
+  position: fixed;
+  z-index:100;
+  top:100px;
+  left:0;
   height: 94px;
   span {
     display: inline-block;

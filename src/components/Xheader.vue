@@ -27,9 +27,11 @@ export default {
 </script>
 <style scope>
 .header {
-  /* background:red; */
+  position:fixed;
   height: 100px;
-  position: relative;
+  width:100%; 
+  overflow: hidden;
+  background: #fff;
 }
 .logo_headset {
   position: absolute;
