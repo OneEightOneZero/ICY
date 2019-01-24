@@ -16,7 +16,7 @@ import axios from "axios"
 Vue.prototype.axios = axios
 
 //把服务器端口号绑到原型
-Vue.prototype.host = "http://localhost:3000"
+Vue.prototype.host = "http://localhost:3000";
 
 import {
     Navbar,
