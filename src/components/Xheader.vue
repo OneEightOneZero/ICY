@@ -68,6 +68,7 @@ export default {
   padding: 5px 0 8px 25px;
 }
 .search input {
+  outline: none;
   background: #f5f5f5;
   margin-left: 20px;
   margin-top:8px;
