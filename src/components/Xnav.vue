@@ -6,11 +6,12 @@
       <span :class="{xian:show_start}" @click="show__start">明星</span>
     </div>
     <div class="content">
-      <div v-for="(item,index) in arr">
-        <img src="" alt=""/>
-        <img src="" alt=""/>
+      <div class="fl content1" v-for="(item,index) in arr" :key="index">
+        <!-- https://image3.ichuanyi.cn -->
+        <img class="img1" :src="'https://image3.ichuanyi.cn/'+item.image.image">
+        <img class="img2" src="">
         <a>
-          <p></p>
+          <p>{{item.image.image}}</p>
           <p></p>
           <p>
             <span></span>
@@ -38,10 +39,7 @@ export default {
       this.show_new = true;
       this.show_blogger = false;
       this.show_start = false;
-      
-      this.axios.get(`${this.host}/new`).then(function(response) {
-          
-      });
+      this.reqData()
     },
     show__blogger() {
       this.show_new = false;
@@ -52,9 +50,16 @@ export default {
       this.show_new = false;
       this.show_blogger = false;
       this.show_start = true;
+    },
+    //请求数据
+    async reqData(){
+        let data = await this.axios.get(`${this.host}/new`);
+        this.arr = this.arr.concat(data.data.data.list);
+        
     }
   }
-};
+}
+
 </script>
 <style lang="scss" scope>
 .nav {
@@ -75,5 +80,14 @@ export default {
     color: #000;
     font-weight: bold;
   }
+}
+.content .img1{
+  width: 345px;
+  height: 517px;
+}
+.content1{
+  display: inline-block;
+  width: 345px;
+  margin:0 10px;
 }
 </style>
