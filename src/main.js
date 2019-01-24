@@ -1,8 +1,9 @@
 import Vue from 'vue'
+// 引入路由模块
+import router from './configs/router.js'
 
 // 全局样式
 import './styles/app.css'
-import App from './App.vue'
 
 //引入mintui
 import MintUI from 'mint-ui'
@@ -17,7 +18,10 @@ Vue.prototype.axios = axios
 //把服务器端口号绑到原型
 Vue.prototype.host = "http://localhost:3000"
 
-import { Navbar, TabItem } from 'mint-ui';
+import {
+    Navbar,
+    TabItem
+} from 'mint-ui';
 Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 
@@ -27,5 +31,6 @@ Vue.prototype.$axios = axios;
 Vue.config.productionTip = false
 
 new Vue({
-    render: h => h(App),
+    router,
+    render: h => h('router-view'),
 }).$mount('#app')

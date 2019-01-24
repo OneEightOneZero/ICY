@@ -2,8 +2,9 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-    <Xheader></Xheader>
-    <Xnav></Xnav>
+    <!-- <Xheader></Xheader>
+    <Xnav></Xnav> -->
+    <router-view></router-view>
     <Cfooter></Cfooter>
    
     
@@ -24,7 +25,7 @@ export default {
     // Xheaderstyle,
     Xheader,
     Cfooter,
-    Xnav,
+    Xnav
     // Xheadershop
   }
 };

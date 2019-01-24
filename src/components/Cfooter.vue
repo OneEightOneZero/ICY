@@ -1,12 +1,20 @@
 <template>
   <div class="cy-tabar clearfix">
     <!---->
-    <div @click="changeCut(index)" v-for="(n,index) in titles" :key="index" class="cy-tabar-item fl" :class="{'cy-selected': index==cur}">
+    <!-- <div @click="changeCut(index)" v-for="(n,index) in titles" :key="index" class="cy-tabar-item fl" :class="{'cy-selected': index==cur}">
       <span v-text="n.title">STYLE</span>
+      <p class="cy-curr-icon"></p>
+    </div> -->
+    <!-- <router-link :to="n.jump" tag="div" @click="changeCut(index)" v-for="(n,index) in titles" :key="index" class="cy-tabar-item fl" :class="{'cy-selected': index==cur}">
+      <span v-text="n.title">STYLE</span>
+      <p class="cy-curr-icon"></p>
+    </router-link> -->
+    <!-- <div class="cy-tabar-item fl cy-selected">
+      <span data-v-1a1d6634>STYLE</span>
       <p class="cy-curr-icon"></p>
     </div>
 
-    <!-- <div class="cy-tabar-item fl">
+    <div class="cy-tabar-item fl">
       <span data-v-1a1d6634>ICON</span>
       <p class="cy-curr-icon"></p>
     </div>
@@ -18,6 +26,25 @@
       <span data-v-1a1d6634>ME</span>
       <p class="cy-curr-icon"></p>
     </div> -->
+
+    <router-link to="/app/style" class="cy-tabar-item fl">
+      <span v-text="style">STYLE</span>
+      <p class="cy-curr-icon"></p>
+    </router-link>
+
+    <router-link to="/app/icon" class="cy-tabar-item fl">
+      <span data-v-1a1d6634>ICON</span>
+      <p class="cy-curr-icon"></p>
+    </router-link>
+    <router-link to="/app/shop" class="cy-tabar-item fl">
+      <span data-v-1a1d6634>SHOP</span>
+      <p class="cy-curr-icon"></p>
+    </router-link>
+    <router-link to="/app/me" class="cy-tabar-item fl">
+      <span data-v-1a1d6634>ME</span>
+      <p class="cy-curr-icon"></p>
+    </router-link>
+
   </div>
 </template>
 
@@ -26,14 +53,19 @@ export default {
   // 获取父组件传过来的属性值，让子组件呈现对应的状态
   data() {
     return {
+      style:"STYLE",
       titles: [{
-        title:'STYLE'
+        title:'STYLE',
+        jump:'app/style'
       },{
-        title:'ICON'
+        title:'ICON',
+        jump:'app/icon'
       },{
-        title:'SHOP'
+        title:'SHOP',
+        jump:'app/shop'
       },{
-        title:'ME'
+        title:'ME',
+        jump:'app/me'
       }],
       cur: 0
     };
@@ -42,12 +74,13 @@ export default {
     changeCut(index) {
             // console.log(index)
             this.cur = index;
-        }
+        },
+    onActive(){}
   },
   computed: {},
   watch: {},
   created() {
-    
+    // this.changeCut(1)
   },
   mounted() {
   }

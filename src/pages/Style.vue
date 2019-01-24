@@ -2,8 +2,7 @@
   <div>
     <!-- <Xheader name="联系人" skill="js"/> -->
     <Xheader/>
-    <Xiconnav/>
-    <Cfooter></Cfooter>
+    <!-- <Cbanner></Cbanner> -->
     
   </div>
 </template>
@@ -11,33 +10,18 @@
 // 引用组件
 
 import Xheader from "../components/Xheader.vue";
-import Cfooter from "../components/Cfooter.vue";
+// import Cbanner from "../components/Cbanner.vue";
 
 export default {
   components: {
     // 注册组件
     // 引用组件，在注册，然后在template使用
-    Xheader,
-    Cfooter
+    Xheader
+    // Cbanner
 
   },
  data() {
     return {
-    
-      styledata: [],
-      op:[{
-          data0:{
-              list0:[{
-                  hasMargin:111,
-                    isShowTitle:222,
-                    isShowTopLine:333
-              }]
-          },
-          mehoda0:2,
-          msg0:3,
-          project0:"icyDesign",
-          result:0
-      }]
     };
   },
   methods: {
