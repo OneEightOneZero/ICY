@@ -7,8 +7,10 @@
       <img src="../assets/images/logo_icy1.png" alt="logo">
     </p>
     <div class="form">
-      <input type="text" class="text" placeholder="请输入11位手机号" v-model="text">
+      <input type="text" class="text" placeholder="请输入11位手机号" v-model="text" @change="iftrue">
       <input type="text" class="psw" placeholder="请输入验证码" v-model="psw">
+      <span>{{}}</span>
+      <span>{{}}</span>
       <p @click="getNum">{{yanzhengma}}</p>
     </div>
     <button @click="login">登录</button>
@@ -20,7 +22,9 @@ export default {
     return {
       yanzhengma: "获取验证码",
       text:"",
-      psw:""
+      psw:"",
+      text_inf:"",
+      psw_inf:"",
     };
   },
   methods: {

@@ -11,7 +11,7 @@
         <!-- https://image3.ichuanyi.cn -->
         <img class="img1" :src="'https://image3.ichuanyi.cn/'+item.image.image">
         <img class="img2" :src="'https://image3.ichuanyi.cn/'+item.avatar" v-show="item.avatar">
-        <div class="box">
+        <div class="box" v-show="item.type?0:1">
           <p class="username">{{item.username}}</p>
           <p class="introduce" v-show="item.introduce">{{item.introduce}}</p>
           <p class="zan">
@@ -26,7 +26,7 @@
         <!-- https://image3.ichuanyi.cn -->
         <img class="img1" :src="'https://image3.ichuanyi.cn/'+item.image.image">
         <img class="img2" :src="'https://image3.ichuanyi.cn/'+item.avatar" v-show="item.avatar">
-        <div class="box" v-show="item.avatar">
+        <div class="box" v-show="item.type?0:1">
           <p class="username">{{item.username}}</p>
           <p class="introduce" v-show="item.introduce">{{item.introduce}}</p>
           <p class="zan">
@@ -179,9 +179,6 @@ export default {
   p{
     height: 30px;
   }
-}
-.content_right :nth-child(1) .box{
-    // display: none;
 }
 .content_right :nth-child(1) .img1{
       height: 400px;
