@@ -47,8 +47,8 @@ export default {
   data() {
     return {
       show_new: true,
-      show_blogger: true,
-      show_start: true,
+      show_blogger: false,
+      show_start: false,
       arr: [],
       arr1:[],
       arr2:[]
@@ -101,14 +101,16 @@ export default {
 </script>
 <style lang="scss" scope>
  .Xnav{
-  z-index:-1;
+  margin-top:195px;
 }
 .nav {
+  width:100%; 
   position: fixed;
   z-index:100;
   top:100px;
   left:0;
   height: 94px;
+  background:#fff;
   span {
     display: inline-block;
     margin: 0 50px;

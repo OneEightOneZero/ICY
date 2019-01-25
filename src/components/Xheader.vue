@@ -27,6 +27,7 @@ export default {
 </script>
 <style scope>
 .header {
+  z-index:100;
   position:fixed;
   height: 100px;
   width:100%; 
