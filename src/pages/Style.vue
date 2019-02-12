@@ -139,3 +139,8 @@ export default {
   padding-bottom: 100px;
 }
 </style>
+<style lang="scss" scope>
+  .header {
+  background:transparent;
+  }
+</style>

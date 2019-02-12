@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <Xheader/>
+    <div class="bao"><Xheader/></div>
     <Xnav/>    
 
   </div>
@@ -26,3 +26,14 @@ export default {
  }
 };
 </script>
+<style lang="scss" scope>
+  .bao{
+    background:#fff;
+    height: 101px;
+    position: fixed;
+    top:0;
+    left:0;
+   width:100%;
+   z-index:100;
+  }
+</style>
