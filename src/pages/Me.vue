@@ -1,23 +1,40 @@
 <template>
-  <div class="login">
-    <header>
-      <img src="../assets/images/left.png" alt="返回">
-    </header>
-    <p class="logo_p">
-      <img src="../assets/images/logo_icy1.png" alt="logo">
-    </p>
-    <div class="form">
-      <input type="text" class="text" placeholder="请输入11位手机号" v-model="text" @change="iftrue">
-      <input type="text" class="psw" placeholder="请输入验证码" v-model="psw">
-      <span>{{}}</span>
-      <span>{{}}</span>
-      <p @click="getNum">{{yanzhengma}}</p>
+  <div class="">
+    <div class="login" v-show="iflogin">
+      <header>
+        <img src="../assets/images/left.png" alt="返回">
+      </header>
+        <p class="logo_p">
+          <img src="../assets/images/logo_icy1.png" alt="logo">
+        </p>
+      <div class="form">
+        <input type="text" class="text" placeholder="请输入11位手机号" v-model="text" @change="iftrue">
+        <input type="text" class="psw" placeholder="请输入验证码" v-model="psw">
+        <span class="text_inf">{{text_inf}}</span>
+        <span class="psw_inf">{{psw_inf}}</span>
+        <p @click="getNum">{{yanzhengma}}</p>
+      </div>
+      <button @click="login">登录</button>
     </div>
-    <button @click="login">登录</button>
+    <div class="" v-show="!iflogin">
+      <Xheader/>
+    </div>
   </div>
 </template>
 <script>
+
+// 引用组件
+
+import Xheader from "../components/Xheader.vue";
+
+
 export default {
+  components: {
+    // 注册组件
+    // 引用组件，在注册，然后在template使用
+    Xheader,
+
+  },
   data() {
     return {
       yanzhengma: "获取验证码",
@@ -25,6 +42,7 @@ export default {
       psw:"",
       text_inf:"",
       psw_inf:"",
+      iflogin:true,
     };
   },
   methods: {
@@ -36,20 +54,33 @@ export default {
         parseInt(Math.random() * 10))
         
     },
+    async reqData(str) {
+      let data = await this.axios.get(`http://localhost:3001/login/username=${str}`);
+      // let data = await this.axios.get(`http://localhost:3001/shop`);
+      console.log(data)
+    },
     login(){
 
       var reg = /^1(3|4|5|7|8)\d{9}$/;
-      console.log(reg.test(this.text))
+      // console.log(reg.test(this.text))
       if(reg.test(this.text)){
             if(this.psw==this.yanzhengma){
-                alert("登录成功")
+      
+              this.reqData(this.text)
+              // let data = this.axios.get(`http://localhost:3001/login/username=${this.text}`);
+              // console.log(data)
+                // reqData()
+                // alert("登录成功")
+                // this.iflogin=false;
             }else{
               alert("请输入正确的验证码")
             }
       }else{
         alert("请输入正确的手机号")
+
       }
-    }
+    },
+    iftrue(){}
   }
 };
 </script>
