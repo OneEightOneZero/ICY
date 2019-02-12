@@ -80,10 +80,7 @@ export default {
     //请求数据
     async reqData(str) {
       let data = await this.axios.get(`http://localhost:3001/${str}`);
-<<<<<<< HEAD
       // let data = await this.axios.get(`${this.host}/${str}`);
-=======
->>>>>>> 24213bb36572f45c351bea80179ffa4e510a7749
       this.arr = this.arr.concat(data.data.data.list);
       this.arr1 = this.arr.filter(function(item, idx) {
         return idx % 2 == 0;
