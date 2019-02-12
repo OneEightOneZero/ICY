@@ -84,7 +84,8 @@ export default {
     },
     //请求数据
     async reqData(str) {
-      let data = await this.axios.get(`${this.host}/${str}`);
+      let data = await this.axios.get(`http://localhost:3001/${str}`);
+      // let data = await this.axios.get(`${this.host}/${str}`);
       this.arr = this.arr.concat(data.data.data.list);
       this.arr1 = this.arr.filter(function(item,idx){
           return idx%2==0
@@ -177,9 +178,6 @@ export default {
   p{
     height: 30px;
   }
-}
-.content_right :nth-child(1) .box{
-    // display: none;
 }
 .content_right :nth-child(1) .img1{
       height: 400px;

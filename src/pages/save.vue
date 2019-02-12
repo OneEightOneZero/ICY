@@ -7,35 +7,32 @@
     
     <!-- 新品入荷 -->
     <Cstitle :name="titles[0]"></Cstitle>
-    <!-- <Cschuchuan :dataxp="styledata[1].list"></Cschuchuan> -->
-    <Cschuchuan :dataxp="sd1"></Cschuchuan>
+    <Cschuchuan :dataxp="styledata[1].list"></Cschuchuan>
     <!--  必买清单 -->
     <Cstitle :name="titles[1]"></Cstitle>
-    <Cschuchuan :dataxp="sd2"></Cschuchuan>
+    <Cschuchuan :dataxp="styledata[2].list[0].goods"></Cschuchuan>
     <!-- 搭配指南 -->
     <Cstitle :name="titles[2]"></Cstitle>
-    <Cschuchuan :dataxp="sd3"></Cschuchuan>
+    <Cschuchuan :dataxp="styledata[7].list[0].goods"></Cschuchuan>
     <!-- 本周新内容 -->
     <Cstitle :name="titles[3]"></Cstitle>
-    <Cschuchuan :dataxp="sd60"></Cschuchuan>
+    <Cschuchuan :dataxp="styledata[7].list[1].goods"></Cschuchuan>
     <!-- 时尚风向标 -->
     <Cstitle :name="titles[4]"></Cstitle>
-    <Cschuchuan :dataxp="sd61"></Cschuchuan>
-
+    <Cschuchuan :dataxp="styledata[7].list[2].goods"></Cschuchuan>
+    <!-- 合作设计师 -->
     <Cstitle :name="titles[5]"></Cstitle>
-    <!-- <Csdesigner :dataxp="designer80[0]"></Csdesigner> -->
-    <Csdesigner :dataxp="styledata[8].list[0]"></Csdesigner>
-    <Csdesigner :dataxp="styledata[8].list[1]"></Csdesigner>
-    <Csdesigner :dataxp="styledata[8].list[2]"></Csdesigner>
-    <Csdesigner :dataxp="styledata[8].list[3]"></Csdesigner>
-    <Csdesigner :dataxp="styledata[8].list[4]"></Csdesigner>
-
+    <Csdesigner :dataxp="styledata[9].list[0]"></Csdesigner>
+    <Csdesigner :dataxp="styledata[9].list[1]"></Csdesigner>
+    <Csdesigner :dataxp="styledata[9].list[2]"></Csdesigner>
+    <Csdesigner :dataxp="styledata[9].list[3]"></Csdesigner>
+    <Csdesigner :dataxp="styledata[9].list[4]"></Csdesigner>
     <!-- I.Magazine -->
     <Cstitle :name="titles[6]"></Cstitle>
-    <Cschuchuan :dataxp="sd70"></Cschuchuan>
+    <Cschuchuan :dataxp="styledata[8].list[0].goods"></Cschuchuan>
     <!-- 品牌咨询 -->
     <Cstitle :name="titles[7]"></Cstitle>
-    <Cschuchuan :dataxp="sd71"></Cschuchuan>
+    <Cschuchuan :dataxp="styledata[8].list[1].goods"></Cschuchuan>
 
   </div>
 </template>
@@ -91,16 +88,7 @@ export default {
             }
 
         ],
-        styledata:[],
-        sd1:[],
-        sd2:[],
-        sd3:[],
-        sd60:[],
-        sd61:[],
-        sd62:[],
-        sd70:[],
-        sd71:[],
-        designer80:[]
+        styledata:[]
     };
   },
   methods: {
@@ -108,17 +96,6 @@ export default {
     async getStyleData() {
       let data = await this.$axios.get("http://localhost:3000/style");
       this.styledata = this.styledata.concat(data.data.data.data.list);
-      this.sd1 = this.sd1.concat(data.data.data.data.list[1].list);
-      this.sd2 = this.sd2.concat(data.data.data.data.list[2].list[0].goods);
-      this.sd3 = this.sd3.concat(data.data.data.data.list[3].list[0].goods);
-      this.sd60 = this.sd60.concat(data.data.data.data.list[6].list[0].goods);
-      this.sd61 = this.sd61.concat(data.data.data.data.list[6].list[1].goods);
-      this.sd62 = this.sd62.concat(data.data.data.data.list[6].list[2].goods);
-      this.sd70 = this.sd70.concat(data.data.data.data.list[7].list[0].goods);
-      this.sd71 = this.sd71.concat(data.data.data.data.list[7].list[1].goods);
-      this.designer80 = this.designer80.concat(data.data.data.data.list[8].list);
-      // console.log(this.styledata);
-      console.log(this.designer80);
     },
     cutTitle(index) {
     //   console.log(index);

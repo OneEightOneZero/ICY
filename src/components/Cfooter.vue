@@ -89,9 +89,10 @@ export default {
 
 <style scoped lang="scss">
 .cy-tabar {
+  overflow-x:hidden;
   position: fixed;
   bottom: 0;
-  width: 750px;
+  width: 100%;
   height: 74px;
   padding: 13px 0;
   line-height: 74px;
@@ -109,7 +110,7 @@ export default {
   background: url("../assets/shadow.png") repeat-x;
 }
 .cy-tabar-item {
-  width: 25%;
+  width: 24%;
   height: 74px;
   text-align: center;
   cursor: pointer;
