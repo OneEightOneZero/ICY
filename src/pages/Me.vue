@@ -55,9 +55,11 @@ export default {
         
     },
     async reqData(str) {
-      let data = await this.axios.get(`http://localhost:3001/login/username=${str}`);
+      let data = await this.axios.post(`http://localhost:3001/login/username=${str}`);
       // let data = await this.axios.get(`http://localhost:3001/shop`);
-      console.log(data)
+      if(JSON.parse(data).code==1){
+        alert("登录成功")
+      }
     },
     login(){
 
