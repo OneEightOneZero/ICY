@@ -54,12 +54,34 @@ export default {
         parseInt(Math.random() * 10))
         
     },
-    async reqData(str) {
-      let data = await this.axios.post(`http://localhost:3001/login/username=${str}`);
-      // let data = await this.axios.get(`http://localhost:3001/shop`);
-      if(JSON.parse(data).code==1){
-        alert("登录成功")
-      }
+    // async reqData(str) {
+    //   let data = await this.axios.post(`http://localhost:3001/login/username=${str}`);
+    //   // let data = await this.axios.get(`http://localhost:3001/shop`);
+    //   if(JSON.parse(data).code==1){
+    //     alert("登录成功")
+    //   }
+    // },
+    // reqData(str){
+    //   axios({
+    //     method: 'post',
+    //     url: '/login',
+    //     data: {
+    //       username:str
+    //     }
+    //   });
+    // },
+    reqData(str){
+      console.log(str)
+      this.axios.post('http://localhost:3001/login',"username="+str)
+      .then(function (response) {
+        console.log(response)
+        if(response.data.code == 1){
+          alert("登录成功")
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
     },
     login(){
 
