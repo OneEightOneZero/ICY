@@ -30,7 +30,4 @@ export default {
     .user{
         margin-top:100px;
     }
-    // .mine{
-    //     display: block;
-    // }
 </style>

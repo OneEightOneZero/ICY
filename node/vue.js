@@ -110,12 +110,12 @@ app.use('/login', urlencoded, (req, res) => {
                 })
             } else {
                 user.insertOne({ username }, function(err, result) {
-                    console.log("不存在", result)
+                    console.log("不存在", result.insertedId)
                     if (result.result.ok == 1) {
                         res.send({
                             code: 1,
                             msg: "登录成功",
-                            userId: result._id
+                            userId: result.insertedId
                         })
                     }
                 })
