@@ -83,10 +83,10 @@ app.use('/start', proxy({
 // 用户登录 '/checklogin'
 app.use('/login', urlencoded, (req, res) => {
     // console.log("进入")
-    console.log("req.body", req.body);
+    // console.log("req.body", req.body);
     let { username } = req.body;
-    console.log("00", username)
-        // console.log(username, password)
+    // console.log("00", username)
+    // console.log(username, password)
     MongoClient.connect('mongodb://localhost:27017', (err, database) => {
         //连接成功后执行这个回调函数
         if (err) throw err;
@@ -106,7 +106,7 @@ app.use('/login', urlencoded, (req, res) => {
                 res.send({
                     code: 1,
                     msg: "登录成功",
-                    username: username
+                    userId: result._id
                 })
             } else {
                 user.insertOne({ username }, function(err, result) {
@@ -115,7 +115,7 @@ app.use('/login', urlencoded, (req, res) => {
                         res.send({
                             code: 1,
                             msg: "登录成功",
-                            username: username
+                            userId: result._id
                         })
                     }
                 })

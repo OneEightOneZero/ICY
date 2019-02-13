@@ -3,7 +3,7 @@
     <span class="logo" v-show="logoicy">
       <img src="../assets/images/logo_icy.png" alt="logo">
     </span>
-    <span class="mine" v-show="mine">我的主页</span>
+    <span class="mine">我的主页</span>
     <span class="search" v-show="search">
       <img src="../assets/images/logo_search.png" alt="search">
       <input type="text" placeholder="连衣裙">
@@ -97,5 +97,6 @@ export default {
   transform: translate(-50%,-50%);
   top:50%;
   left:50%;
+  display: none;
 }
 </style>

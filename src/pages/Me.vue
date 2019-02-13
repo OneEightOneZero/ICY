@@ -70,18 +70,24 @@ export default {
     //     }
     //   });
     // },
-    reqData(str){
-      console.log(str)
-      this.axios.post('http://localhost:3001/login',"username="+str)
-      .then(function (response) {
-        console.log(response)
-        if(response.data.code == 1){
-          alert("登录成功")
+    async reqData(str){
+      // console.log(str)
+      let obj = await this.axios.post('http://localhost:3001/login',"username="+str)
+      // .then(function (response) {
+        // console.log(response)
+        console.log(obj)
+        let userId = obj.data.userId;
+        // console.log(userId)
+        if(obj.data.code == 1){
+          alert(userId+"登录成功")
+          location.href = "http://localhost:8080/#/app/mine?"+userId;
+          // router.push({ path: `/style/${userId}` })
+          // <router-link :to="...">	
         }
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
+      // })
+      // .catch(function (error) {
+        // console.log(error);
+      // })
     },
     login(){
 
@@ -94,8 +100,13 @@ export default {
               // let data = this.axios.get(`http://localhost:3001/login/username=${this.text}`);
               // console.log(data)
                 // reqData()
-                // alert("登录成功")
                 // this.iflogin=false;
+                // if(this.reqData(this.text).code==1){
+                //     alert("登录成功")
+                //     console.log(this.reqData().data.code);
+                // }
+        
+                // router.push({ path: `/user/${userId}` })
             }else{
               alert("请输入正确的验证码")
             }
